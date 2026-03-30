@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400&display=swap');
+
+:root {
+  --ink: #0a0a0f;
+  --paper: #f5f2eb;
+  --gold: #c9a84c;
+  --rust: #c0392b;
+  --slate: #2c3e50;
+  --smoke: #e8e4dc;
+  --dim: #8a8680;
+  --ff-display: 'Syne', sans-serif;
+  --ff-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  font-family: var(--ff-mono) !important;
+}
+
+/* ── Progress bar ── */
+#scroll-prog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--rust));
+  z-index: 9999;
+  transition: width .1s linear;
+}
+
+/* ── Navbar ── */
+.anim-nav {
+  background: rgba(245, 242, 235, .9) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--smoke);
+  transition: box-shadow .3s;
+}
+
+.anim-nav.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .08);
+}
+
+.nav-brand {
+  font-family: var(--ff-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--ink) !important;
+  letter-spacing: -.02em;
+}
+
+.nav-link-custom {
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--dim) !important;
+  text-decoration: none;
+  transition: color .2s;
+  padding: .4rem .8rem;
+}
+
+.nav-link-custom:hover {
+  color: var(--ink) !important;
+}
+
+/* ── Hero ── */
+.hero-section {
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+}
+
+.hero-label {
+  font-size: .65rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero-title {
+  font-family: var(--ff-display);
+  font-weight: 800;
+  font-size: clamp(3.5rem, 9vw, 9rem);
+  line-height: .92;
+  letter-spacing: -.03em;
+}
+
+.hero-title .outline {
+  -webkit-text-stroke: 1px rgba(245, 242, 235, .3);
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: .78rem;
+  line-height: 2;
+  color: rgba(245, 242, 235, .5);
+  max-width: 400px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1.2rem;
+  border: 1px solid rgba(245, 242, 235, .1);
+  font-size: .65rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 235, .4);
+  margin-top: 2rem;
+}
+
+.hero-badge span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: .5
+  }
+}
+
+/* ── Section ── */
+.section-label {
+  font-size: .62rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.section-title {
+  font-family: var(--ff-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+/* ── Reveal Cards (Bootstrap cols) ── */
+.reveal-card {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: border-color .3s;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.reveal-card:hover {
+  border-color: var(--gold);
+}
+
+.reveal-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--rust));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s cubic-bezier(.76, 0, .24, 1);
+}
+
+.reveal-card:hover::after {
+  transform: scaleX(1);
+}
+
+.card-num {
+  font-family: var(--ff-display);
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, .06);
+  line-height: 1;
+}
+
+.card-title-sm {
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin: 1rem 0 .6rem;
+}
+
+.card-body-sm {
+  font-size: .7rem;
+  line-height: 1.9;
+  color: rgba(245, 242, 235, .45);
+}
+
+/* ── Timeline ── */
+.tl-section {
+  background: var(--smoke);
+}
+
+.tl-line {
+  width: 1px;
+  background: rgba(0, 0, 0, .12);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+}
+
+.tl-progress-fill {
+  width: 1px;
+  background: linear-gradient(180deg, var(--gold), var(--rust));
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 0%;
+  transition: height .05s linear;
+}
+
+.tl-item {
+  position: relative;
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.tl-item.right {
+  transform: translateX(40px);
+}
+
+.tl-dot {
+  position: absolute;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dim);
+  border: 2px solid var(--smoke);
+  transition: background .4s, transform .4s;
+}
+
+.tl-item.left .tl-dot {
+  right: -6px;
+}
+
+.tl-item.right .tl-dot {
+  left: -6px;
+}
+
+.tl-item.active .tl-dot {
+  background: var(--gold);
+  transform: scale(1.5);
+}
+
+.tl-card {
+  background: var(--paper);
+  border: 1px solid rgba(0, 0, 0, .08);
+  padding: 1.8rem 2rem;
+}
+
+.tl-year {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.tl-ttl {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin: .4rem 0;
+}
+
+.tl-body {
+  font-size: .7rem;
+  color: var(--dim);
+  line-height: 1.9;
+}
+
+/* ── Morph Grid ── */
+.morph-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  background: var(--dim);
+  border: 1px solid var(--smoke);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  transition: background .3s;
+}
+
+.morph-cell:hover {
+  background: var(--ink);
+}
+
+.morph-cell .m-icon {
+  font-size: 2.2rem;
+  transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.morph-cell:hover .m-icon {
+  transform: scale(2) rotate(12deg);
+}
+
+.morph-cell .m-label {
+  font-size: .65rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--dim);
+  transition: color .3s;
+  position: relative;
+  z-index: 1;
+}
+
+.morph-cell:hover .m-label {
+  color: rgba(245, 242, 235, .6);
+}
+
+/* ── Ticker ── */
+.ticker-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--smoke);
+  border-bottom: 1px solid var(--smoke);
+  padding: 1rem 0;
+}
+
+.ticker-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tickAnim 22s linear infinite;
+}
+
+.ticker-inner span {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  letter-spacing: .08em;
+  padding: 0 2.5rem;
+}
+
+.ticker-inner span:nth-child(odd) {
+  color: var(--ink);
+}
+
+.ticker-inner span:nth-child(even) {
+  color: var(--dim);
+}
+
+@keyframes tickAnim {
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(-50%)
+  }
+}
+
+/* ── Scramble Box ── */
+.scramble-box {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3rem;
+  border-left: 3px solid var(--gold);
+}
+
+.scramble-big {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+#s-word {
+  color: var(--gold);
+}
+
+.scramble-sub {
+  font-size: .72rem;
+  color: rgba(245, 242, 235, .45);
+  line-height: 2;
+}
+
+/* ── Magnetic Buttons ── */
+.mag-btn {
+  padding: .85rem 2rem;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, .15);
+  font-family: var(--ff-mono);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s, color .3s;
+  cursor: default;
+}
+
+.mag-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform .35s cubic-bezier(.76, 0, .24, 1);
+}
+
+.mag-btn:hover {
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.mag-btn:hover::after {
+  transform: scaleY(1);
+}
+
+.mag-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+  background: var(--ink);
+  padding: 5rem 0;
+}
+
+.stat-n {
+  font-family: var(--ff-display);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  color: var(--paper);
+  line-height: 1;
+}
+
+.stat-l {
+  font-size: .62rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-top: .4rem;
+}
+
+.stat-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, .08);
+  align-self: stretch;
+}
+
+/* ── Btn ── */
+.btn-ink {
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: .8rem 2rem;
+  font-family: var(--ff-mono);
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: color .3s;
+}
+
+.btn-ink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: translateX(-101%);
+  transition: transform .4s cubic-bezier(.76, 0, .24, 1);
+}
+
+.btn-ink:hover::before {
+  transform: translateX(0);
+}
+
+.btn-ink:hover {
+  color: var(--ink);
+}
+
+.btn-ink em {
+  position: relative;
+  z-index: 1;
+  font-style: normal;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--paper);
+  border: 1px solid rgba(245, 242, 235, .2);
+  padding: .8rem 2rem;
+  font-family: var(--ff-mono);
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  transition: border-color .3s, color .3s;
+  cursor: default;
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .ticker-inner {
+    animation: none;
+  }
+}

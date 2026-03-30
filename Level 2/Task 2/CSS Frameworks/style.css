@@ -1,0 +1,131 @@
+ :root {
+            --Demo-primary: #5b21b6;
+            --Demo-primary-hover: #4c1d95;
+            --Demo-secondary: #0d9488;
+            --Demo-secondary-hover: #0f766e;
+            --Demo-bg: #f8fafc;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            background-color: var(--Demo-bg);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        /* Utilities */
+        .text-Demo-primary { color: var(--Demo-primary) !important; }
+        .bg-Demo-primary { background-color: var(--Demo-primary) !important; }
+        .gradient-text {
+            background: linear-gradient(to right, var(--Demo-primary), var(--Demo-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        /* Buttons */
+        .btn-Demo {
+            border-radius: 50rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .btn-Demo-primary { background-color: var(--Demo-primary); color: white; border: none; }
+        .btn-Demo-primary:hover { background-color: var(--Demo-primary-hover); color: white; transform: translateY(-2px); }
+        
+        .btn-Demo-outline { border: 2px solid var(--Demo-primary); color: var(--Demo-primary); background: transparent; }
+        .btn-Demo-outline:hover { background-color: #f5f3ff; color: var(--Demo-primary); }
+
+        /* Header */
+        header {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+        }
+
+        /* Hero */
+        .hero-section {
+            padding: 100px 0;
+            position: relative;
+        }
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(91, 33, 182, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Features */
+        .feature-card {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+            transition: var(--transition);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border-color: var(--Demo-primary);
+        }
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            background-color: #f5f3ff;
+            color: var(--Demo-primary);
+        }
+
+        /* Modal Custom Styling */
+        .modal-content {
+            border-radius: 1.25rem;
+            border: none;
+            overflow: hidden;
+        }
+        .form-control {
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+        }
+
+        /* Pricing */
+        .pricing-card {
+            border-radius: 1.25rem;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,0.08);
+        }
+        .pricing-card.popular {
+            border: 2px solid var(--Demo-primary);
+            position: relative;
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--Demo-primary);
+            color: white;
+            padding: 2px 16px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }

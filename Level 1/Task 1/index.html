@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Demo | Future of Workflow</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    <i data-lucide="zap"></i> Just Demo
+                </a>
+
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="mobile-toggle-label">
+                    <i data-lucide="menu"></i>
+                </label>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn btn-primary" style="padding: 0.5rem 1.2rem; color: white;">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Lorem ipsum dolor sit, amet consectetur adipisicing.</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo voluptas expedita blanditiis excepturi
+                    eum ut laboriosam, saepe esse placeat, beatae maiores quam voluptates eos vero quia dolorem quo
+                    molestias earum.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#features" class="btn btn-primary">Get Started Free</a>
+                    <a href="#" class="btn" style="background: #e2e8f0; color: var(--secondary);">Watch Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Built for Speed and Scale</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="layers"></i></div>
+                        <h3>Smart Batching</h3>
+                        <p>Automatically group related tasks to minimize context switching and maximize output
+                            efficiency.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Enterprise Security</h3>
+                        <p>Military-grade encryption for all your data, ensuring your company's privacy is never
+                            compromised.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="bar-chart-3"></i></div>
+                        <h3>Real-time Analytics</h3>
+                        <p>Gain deep insights into your team's performance with customizable dashboards and reports.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Let's talk about your project</h3>
+                        <p>Have questions or need a custom solution? Our team is here to help you optimize your
+                            workflow.</p>
+
+                        <div class="contact-methods"
+                            style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+                            <div class="contact-item" style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="icon-box"
+                                    style="width: 44px; height: 44px; background: #eef2ff; color: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <i data-lucide="mail"></i></div>
+                                <div>
+                                    <h4 style="font-size: 0.9rem; color: var(--text-muted);">Email us</h4>
+                                    <p style="font-weight: 600;">hello@justdemo.io</p>
+                                </div>
+                            </div>
+                            <div class="contact-item" style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="icon-box"
+                                    style="width: 44px; height: 44px; background: #eef2ff; color: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <i data-lucide="phone"></i></div>
+                                <div>
+                                    <h4 style="font-size: 0.9rem; color: var(--text-muted);">Call us</h4>
+                                    <p style="font-weight: 600;">+1 (555) 000-1234</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-col footer-brand">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 1rem;">
+                        <i data-lucide="zap"></i> Just Demo
+                    </a>
+                    <p>Elevating team productivity with next-gen workflow automation and intelligent data streaming.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="github"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Product -->
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Streaming Engine</a></li>
+                        <li><a href="#">Workflow Builder</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Enterprise</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Vision</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Legal -->
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Just Demo Inc. All rights reserved.</p>
+                <div id="bd-clock">Loading...</div>
+
+
+                <div style="display: flex; gap: 1.5rem;">
+                    <span>System Status: <span style="color: #10b981;">● Online</span></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function updateBDTime() {
+            const options = {
+                // timeZone: 'asia/Dhaka',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+
+            const formatter = new Intl.DateTimeFormat('en-US', options);
+            document.getElementById('bd-clock').innerHTML = formatter.format(new Date());
+        }
+        setInterval(updateBDTime, 1000);
+        updateBDTime();
+    </script>
+</body>
+
+</html>
